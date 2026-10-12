@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f7f2" />
+    <meta name="description" content="Papertrail is an independent bookshop for curious readers. Find your next favourite story." />
+    <title>Papertrail Books | Stories worth staying in for</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="announcement">Independent books, carefully chosen <span>/</span> Free delivery on orders over $40</div>
+    <header class="site-header">
+      <div class="header-main page-width">
+        <a class="brand" href="#top" aria-label="Papertrail Books home"><span class="brand-mark"><i data-lucide="book-open"></i></span><span>papertrail<span class="brand-period">.</span></span></a>
+        <form class="search-form" id="searchForm" role="search">
+          <i data-lucide="search" aria-hidden="true"></i><label class="sr-only" for="searchInput">Search books or authors</label>
+          <input id="searchInput" type="search" placeholder="Search books, authors, worlds..." autocomplete="off" /><kbd>/</kbd>
+        </form>
+        <div class="header-actions">
+          <button class="icon-action" id="savedToggle" type="button" aria-label="Show saved books" aria-pressed="false" title="Saved books"><i data-lucide="heart"></i><span id="savedCount" class="saved-count" hidden>0</span></button>
+          <button class="cart-trigger" id="cartToggle" type="button" aria-label="Open shopping bag"><i data-lucide="shopping-bag"></i><span class="cart-label">Bag</span><span class="cart-count" id="cartCount">0</span></button>
+        </div>
+      </div>
+      <nav class="category-nav page-width" aria-label="Shop by category">
+        <a href="#shop" data-nav-category="All books" class="nav-link nav-link-active">All books</a>
+        <a href="#shop" data-nav-category="Fiction" class="nav-link">Fiction</a>
+        <a href="#shop" data-nav-category="Sci-Fi" class="nav-link">Sci-Fi</a>
+        <a href="#shop" data-nav-category="Mystery" class="nav-link">Mystery</a>
+        <a href="#shop" data-nav-category="Nonfiction" class="nav-link">Nonfiction</a>
+        <span class="nav-note">A little more story, every day <i data-lucide="sparkles"></i></span>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero page-width" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEIGHBOURHOOD BOOKSHOP, ONLINE</p>
+          <h1 id="hero-title">Stories worth<br /><em>staying in for.</em></h1>
+          <p class="hero-description">For the dog-eared pages, the one-more-chapter nights, and the books you give to everyone you love.</p>
+          <a class="primary-button hero-button" href="#shop">Find your next read <i data-lucide="arrow-right"></i></a>
+          <div class="hero-footnote"><i data-lucide="package-check"></i> Packed with care, sent with a little love.</div>
+        </div>
+        <div class="hero-art" aria-label="Featured book: The Midnight Library by Matt Haig">
+          <div class="hero-sticker"><span>THE<br />BOOKSELLER'S<br />PICK</span><i data-lucide="sparkles"></i></div>
+          <div class="hero-book-wrap"><div class="hero-fallback">The Midnight Library<small>Matt Haig</small></div><img class="hero-book-cover" src="https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg" alt="Cover of The Midnight Library by Matt Haig" /></div>
+          <div class="hero-book-note"><span class="note-rule"></span><span>One book. A thousand lives.<br /><strong>Our pick this week.</strong></span></div>
+          <span class="hero-sparkle hero-sparkle-one">✳</span><span class="hero-sparkle hero-sparkle-two">✳</span>
+        </div>
+      </section>
+      <section class="shop-section page-width" id="shop" aria-labelledby="shop-title">
+        <div class="shop-heading"><div><p class="eyebrow shop-eyebrow">A GOOD PLACE TO START</p><h2 id="shop-title">On our shelves <span class="heading-asterisk">✳</span></h2></div><p class="shop-intro">A few we can't stop talking about.</p></div>
+        <div class="shop-toolbar"><div class="filter-tabs" id="filterTabs" role="group" aria-label="Filter books by category"></div>
+          <label class="sort-control" for="sortSelect"><span>Sort</span><select id="sortSelect" aria-label="Sort books"><option value="featured">Featured</option><option value="rating">Top rated</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="title">Title: A to Z</option></select><i data-lucide="chevron-down"></i></label>
+        </div>
+        <div class="results-line"><p id="resultsLabel" aria-live="polite"></p><button class="clear-filters" id="clearFilters" type="button" hidden>Clear filters <i data-lucide="x"></i></button></div>
+        <div class="book-grid" id="bookGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden><span class="empty-icon"><i data-lucide="book-open"></i></span><h3>No stories found just yet.</h3><p>Try another title, author, or shelf.</p><button class="text-button" id="emptyReset" type="button">Show all books <i data-lucide="arrow-right"></i></button></div>
+      </section>
+      <section class="newsletter-band" aria-labelledby="newsletter-title"><div class="newsletter-inner page-width"><div class="newsletter-mark"><i data-lucide="mail"></i></div><div class="newsletter-copy"><p class="eyebrow">A LETTER FROM THE BOOKSHOP</p><h2 id="newsletter-title">Good books. No plot spoilers.</h2><p>New finds and reading notes, delivered now and then.</p></div><form class="newsletter-form" id="newsletterForm"><label class="sr-only" for="emailInput">Your email address</label><input id="emailInput" type="email" placeholder="Your email address" required /><button type="submit" aria-label="Join the reading list"><i data-lucide="arrow-right"></i></button></form></div></section>
+    </main>
+    <footer class="site-footer page-width"><a class="brand footer-brand" href="#top"><span class="brand-mark"><i data-lucide="book-open"></i></span><span>papertrail<span class="brand-period">.</span></span></a><p>Made for readers, by readers. <span>© 2026 Papertrail Books</span></p><a class="footer-top" href="#top">Back to top <i data-lucide="arrow-up-right"></i></a></footer>
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true" inert>
+      <div class="drawer-header"><div><p class="eyebrow">YOUR PAPERTRAIL</p><h2>Your bag <span id="drawerItemCount">(0)</span></h2></div><button class="close-button" id="closeCart" type="button" aria-label="Close shopping bag"><i data-lucide="x"></i></button></div>
+      <div class="shipping-progress" id="shippingProgress"></div><div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty"><span class="cart-empty-icon"><i data-lucide="shopping-bag"></i></span><h3>Your next favourite is out there.</h3><p>Fill your bag with a story worth keeping.</p><button class="primary-button" id="continueShopping" type="button">Browse the shelves <i data-lucide="arrow-right"></i></button></div>
+      <div class="drawer-footer" id="drawerFooter" hidden><div class="subtotal-row"><span>Subtotal</span><strong id="subtotalValue">$0.00</strong></div><p class="shipping-note">Shipping and taxes calculated at checkout.</p><button class="checkout-button" id="checkoutButton" type="button">Continue to checkout <i data-lucide="arrow-right"></i></button><p class="checkout-note"><i data-lucide="lock-keyhole"></i> Secure checkout · No payment is collected in this demo</p></div>
+    </aside>
+    <div class="toast" id="toast" role="status" aria-live="polite"><i data-lucide="check"></i><span id="toastMessage"></span></div>
+    <dialog class="confirmation-dialog" id="confirmationDialog"><button class="close-button dialog-close" id="closeDialog" type="button" aria-label="Close"><i data-lucide="x"></i></button><span class="confirmation-icon"><i data-lucide="check"></i></span><p class="eyebrow">A LITTLE NOTE FROM US</p><h2 id="dialogTitle">You're on the list.</h2><p id="dialogMessage">Thanks for stopping by Papertrail.</p><button class="primary-button" id="dialogDone" type="button">Back to the books <i data-lucide="arrow-right"></i></button></dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
